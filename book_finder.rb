@@ -21,11 +21,11 @@ def question(i)
   answer = gets.chomp
   if answer == "y"
     i = i+1
-    books_per_page(i.to_s)
+    books_per_page(i)
     question(i)
   end
 end
 
 i = 1
-books_per_page(i.to_s)
+books_per_page(i)
 question(i)
