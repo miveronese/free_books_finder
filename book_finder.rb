@@ -11,15 +11,15 @@ def books_per_page(page_number)
 end
 
 def print_titles(page)
-  books_and_rank = page.css(".zg_rankNumber, .zg_title a")
+  titles_and_ranks = page.css(".zg_rankNumber, .zg_title a")
   books = Hash.new
-  books_and_rank.each_slice(2) do 
+  titles_and_ranks.each_slice(2) do 
     |i| books[i[0]] = i[1] 
   end
 
-  books.map do |rank, book|
-    puts rank.text + book.text 
-    puts book["href"].strip
+  books.map do |rank, title|
+    puts rank.text + title.text 
+    puts title["href"].strip
     puts "\n"
   end
 end
