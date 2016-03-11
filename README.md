@@ -1,3 +1,3 @@
-# free_books_finder
+# Free books finder
 
-A ruby script to list free sci-fi books available for Kindle.
+A ruby script to find free sci-fi books available for Kindle.
