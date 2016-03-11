@@ -6,13 +6,14 @@ def books_per_page(page_number)
   page_url = "_pg_1?_encoding=UTF8&pg=#{page_number}&tf=2"
   url = base_url + page_url
   page = Nokogiri::HTML(open(url))
-  puts titles(page)
+  titles(page)
 end
 
 def titles(page)
   books = page.css(".zg_title a")
   books.map do |book|
-    book.text + book["href"]
+    puts "-" + book.text
+    puts "link:" + book["href"].strip
   end
 end
 
